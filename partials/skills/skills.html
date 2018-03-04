@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 animated" in-view="skillHeader = $inview"
+             ng-class="{ 'fadeInDown zoomIn': skillHeader}">
+            <h3 class="font-light text-center">what makes the different</h3>
+            <div class="headline-spacer"></div>
+
+            <p>
+                A fullstack developer is not one of them, but more a developer with a holistic view of the entire
+                development and a broad range of expertise. It is essential to be a specialist in one and similar fields.
+            </p>
+            <p>
+                My subject is clearly the frontend development.
+                Click on right hand side lineicon to see specification.
+            </p>
+        </div>
+    </div>
+    <div class="row ma-t5p">
+        <div in-view="skillToggle = $inview"
+             ng-class="{'fadeInRight': skillToggle}"
+             class="col-1 offset-11 ta-r animated delay inline-toggle">
+            <a class="animated fadeIn" ng-show="!toggleInfoFromDiagram" ng-click="toggleInfoFromDiagram = true">
+                <span class="lnr lnr-menu"></span>
+            </a>
+            <a class="animated fadeIn" ng-show="toggleInfoFromDiagram" ng-click="toggleInfoFromDiagram = false;">
+                <span class="lnr lnr-cross"></span>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div in-view="spider = $inview"
+             ng-class="{ 'fadeInDown zoomIn': spider, 'col-7': toggleInfoFromDiagram, 'col-12': !toggleInfoFromDiagram}"
+             class="animated">
+            <canvas class="chart chart-radar" chart-data="fullstackDatas" chart-series="series"
+                    chart-labels="fullstackLabels" chart-options="fullstackOptions"></canvas>
+        </div>
+        <div in-view="skillContent = $inview"
+             ng-class="{'fadeInRight' : skillContent}"
+                class="col-4 animated delay skill-content-description" ng-show="toggleInfoFromDiagram">
+            <div ng-show="isDisplayed($index, contentToShow)" class="animated fadeIn"
+                 ng-repeat="(skillname, skillcontent) in skills.fullstack">
+                <h6>{{skillname}}</h6>
+                <p class="ta-l">{{skillcontent.description.prolog}}</p>
+                <p class="ta-l">{{skillcontent.description.text}}</p>
+                <!--<ul>
+                    <li ng-repeat="(key,value) in skillcontent.subskills">
+                        {{key}} {{value}}
+                    </li>
+                </ul>-->
+                <div class="row justify-content-between">
+                    <div class="col-1" ng-show="$index == contentToShow">
+                        <a class="prev-button" ng-click="prev()">
+                            <span class="lnr lnr-chevron-left"></span>
+                        </a>
+                    </div>
+                    <div class="col-1" ng-show="$index == contentToShow">
+                        <a class="next-button" ng-click="next()">
+                            <span class="lnr lnr-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

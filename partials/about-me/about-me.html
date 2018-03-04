@@ -1,0 +1,59 @@
+<div class="container entry-page">
+    <div class="row" itemscope itemtype="http://schema.org/Person">
+
+        <div in-view="profilePicture = $inview" ng-class="profilePicture ? 'fadeInDown zoomIn': ''"
+             class="col-md-6 animated">
+            <img ng-if="my.picture" itemprop="image" src="{{my.picture}}"/>
+        </div>
+        <div in-view="aboutMe = $inview" ng-class="aboutMe ? 'fadeInDown zoomIn' : ''"
+             class="aboutme col-md-6 animated">
+            <div><h1>{{my.name}}</h1></div>
+
+            <meta itemprop="name" content="{{my.name}}"/>
+            <link itemprop="url" href="{{my.name}}"/>
+            <div ng-if="company.jobtitle">
+                <div>{{company.jobtitle}}</div>
+                <meta itemprop="jobTitle" content="{{company.jobtitle}}"/>
+            </div>
+            <div ng-if="company.name" class="x-small accent">
+                <div class="accent">@{{company.name}}</div>
+                <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+                            <meta itemprop="name" content="{company.name}}"/>
+                        </span>
+            </div>
+            <div class="headline-spacer"></div>
+            <div class="row">
+                <div class="col-md-4">
+                    <b>CONTACT</b>
+                </div>
+                <div class="col-md-8">
+                    <table>
+                        <tr>
+                            <td><span class="lnr lnr-phone-handset"></span></td>
+                            <td>{{my.contact.phone}}</td>
+                        </tr>
+                        <tr>
+                            <td><span class="lnr lnr-envelope"></span></td>
+                            <td>{{my.contact.email}}</td>
+                        </tr>
+                        <tr>
+                            <td><span class="lnr lnr-map-marker"></span></td>
+                            <td>{{my.address.street}} {{my.address.number}}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>{{my.address.zipcode}} {{my.address.city}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <a ng-repeat="socialprofile in my.social" href="{{socialprofile.url}}" target="_blank">
+                        <i class="fab {{socialprofile.icon}}"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

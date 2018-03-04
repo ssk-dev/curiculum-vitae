@@ -1,0 +1,62 @@
+.timeline {
+    position: relative;
+    padding: 35px 0 20px 0;
+    width: 100%;
+    background-image:url("../img/dot.png");
+    background-size:1px;
+    background-repeat:repeat-y;
+    background-position:center;
+}
+.timeline>div{
+    padding-top: 30px;
+    position: relative;
+    margin-top: -40px;
+        word-break: break-word;
+}
+.timeline>:nth-of-type(even){
+    padding-left: 30px;
+}
+.timeline>:nth-of-type(even) .date:before{
+    content:"";
+    width: 15px;
+    height: 15px;
+    border-radius:100%;
+    background:#333;
+    border: 5px solid #fff;
+    position:absolute;
+    left: -7px;
+    top:33px;
+}
+.timeline>:nth-of-type(odd){
+    text-align: right;
+    padding-right: 30px;
+}
+.timeline>:nth-of-type(odd) .date:after{
+    content:"";
+    width: 15px;
+    height: 15px;
+    border-radius:100%;
+    background:#333;
+    border: 5px solid #fff;
+    position:absolute;
+    right: -8px;
+    top:33px;
+}
+.timeline:nth-of-type(odd) :before{
+    background:#ddd;
+}
+.timeline .date{
+    margin-bottom: 4px;
+    padding: 0;
+    color: #b3b3b3;
+}
+.timeline .company{
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    font-size: 18px;
+    color: #333333;
+}
+.timeline .description{
+color: #808080;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="curriculumVitae">
+<head>
+    <meta charset="UTF-8">
+    <title>Curriculum Vitae</title>
+    <link rel="stylesheet" href="assets/components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/components/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="assets/components/animate.css/animate.min.css" />
+    <link rel="stylesheet" href="assets/components/timesheet.js/dist/timesheet.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/aboutme.css" />
+    <link rel="stylesheet" href="assets/css/timeline.css" />
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" />
+    <link rel="stylesheet" href="assets/components/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css" />
+    <script src="assets/components/angular/angular.min.js"></script>
+    <script src="assets/components/jQuery/dist/jquery.min.js" type="application/javascript"></script>
+    <script src="assets/components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="assets/components/angular-inview/angular-inview.js"></script>
+    <script src="assets/components/bootstrap/dist/js/bootstrap.bundle.min.js" type="application/javascript"></script>
+    <script src="assets/components/momentjs/min/moment.min.js" type="application/javascript"></script>
+    <script src="assets/components/angular-moment/angular-moment.min.js" type="application/javascript"></script>
+    <script src="assets/components/timesheet.js/dist/timesheet.min.js" type="application/javascript"></script>
+    <script src="assets/components/chart.js/dist/Chart.min.js" type="application/javascript"></script>
+    <script src="assets/components/angular-chart.js/dist/angular-chart.min.js" type="application/javascript"></script>
+    <script src="controller/app.js" type="application/javascript"></script>
+    <script src="partials/about-me/about-me.js" type="application/javascript"></script>
+    <script src="partials/skills/skills.js" type="application/javascript"></script>
+    <script src="partials/timeline/timeline.js" type="application/javascript"></script>
+    <script src="partials/persona/persona.js" type="application/javascript"></script>
+    <script src="partials/cookies/cookies.js" type="application/javascript"></script>
+</head>
+<body data-spy="scroll" data-target="#main-navigation" data-offset="0">
+
+<ul class="nav navbar justify-content-center sticky-top navbar-light bg-light" id="myNavbar">
+            <li class="nav-item">
+                <a class="nav-link" href="#about-me"><span>me</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#skills"><span>skills</span></a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#timeline"><span>timeline</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#persona"><span>persona</span></a></li>
+            <li class="nav-item"></li>
+        </ul>
+
+<about-me id="about-me"></about-me>
+<skills id="skills"></skills>
+<timeline id="timeline"></timeline>
+<persona id="persona"></persona>
+<!--<cookies></cookies>-->
+
+
+<script>
+    $(document).ready(function(){
+        // Add scrollspy to <body>
+        $('body').scrollspy({target: ".navbar", offset: 50});
+
+        // Add smooth scrolling on all links inside the navbar
+        $("#myNavbar a").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            }  // End if
+        });
+    });
+</script>
+</body>
+</html>
