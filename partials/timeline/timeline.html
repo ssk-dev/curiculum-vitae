@@ -14,7 +14,7 @@
 
         <div in-view="timelineContent = $inview" ng-class="{ 'fadeIn': timelineContent }" class="ma-t5p timeline animated">
             <div in-view="timelineEvent{{$index}} = $inview" ng-class="{ 'fadeInDown zoomIn': timelineEvent{{$index}}, 'offset-md-6': $odd }" class="col-md-6 animated" ng-repeat="event in timeline.jobs | orderBy : 'start'">
-                <div class="date"><span ng-if="!event.end">since </span>{{event.start}}<span ng-if="event.end && event.end != '-'"> - </span><span ng-if="event.end && event.end != '-'">{{event.end}}</span></div>
+                <div class="date"><sgpan ng-if="!event.end">since </sgpan>{{event.start}}<span ng-if="event.end && event.end != '-'"> - </span><span ng-if="event.end && event.end != '-'">{{event.end}}</span></div>
                 <div class="company"><b>{{event.company}}</b> {{event.job}}</div>
                 <div class="description">{{event.description}}</div>
             </div>
