@@ -29,14 +29,14 @@
     </div>
     <div class="row">
         <div in-view="spider = $inview"
-             ng-class="{ 'fadeInDown zoomIn': spider, 'col-7': toggleInfoFromDiagram, 'col-12': !toggleInfoFromDiagram}"
+             ng-class="{ 'fadeInDown zoomIn': spider, 'col-md-7': toggleInfoFromDiagram, 'col-md-12': !toggleInfoFromDiagram}"
              class="animated">
             <canvas class="chart chart-radar" chart-data="fullstackDatas" chart-series="series"
                     chart-labels="fullstackLabels" chart-options="fullstackOptions"></canvas>
         </div>
         <div in-view="skillContent = $inview"
              ng-class="{'fadeInRight' : skillContent}"
-                class="col-4 animated delay skill-content-description" ng-show="toggleInfoFromDiagram">
+                class="col-md-4 animated delay skill-content-description" ng-show="toggleInfoFromDiagram">
             <div ng-show="isDisplayed($index, contentToShow)" class="animated fadeIn"
                  ng-repeat="(skillname, skillcontent) in skills.fullstack">
                 <h6>{{skillname}}</h6>
