@@ -1,5 +1,6 @@
 /files/
 !/files/readme.md
-package-lock.json
-.idea
+/.idea
 /assets/components/
+/node_modules/
+/package-lock.json
