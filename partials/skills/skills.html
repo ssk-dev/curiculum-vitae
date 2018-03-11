@@ -15,7 +15,7 @@
             </p>
         </div>
     </div>
-    <div class="row ma-t5p">
+    <div class="row ma-t5p menu-fullwidth">
         <div in-view="skillToggle = $inview"
              ng-class="{'fadeInRight': skillToggle}"
              class="col-1 offset-11 ta-r animated delay inline-toggle">
@@ -33,6 +33,18 @@
              class="animated">
             <canvas class="chart chart-radar" chart-data="fullstackDatas" chart-series="series"
                     chart-labels="fullstackLabels" chart-options="fullstackOptions"></canvas>
+        </div>
+        <div class="ma-t5p menu-responsive">
+            <div in-view="skillToggle = $inview"
+                 ng-class="{'fadeInDown': skillToggle}"
+                 class="col-1 animated delay inline-toggle">
+                <a class="animated fadeIn" ng-show="!toggleInfoFromDiagram" ng-click="toggleInfoFromDiagram = true">
+                    <span class="lnr lnr-menu"></span>
+                </a>
+                <a class="animated fadeIn" ng-show="toggleInfoFromDiagram" ng-click="toggleInfoFromDiagram = false;">
+                    <span class="lnr lnr-cross"></span>
+                </a>
+            </div>
         </div>
         <div in-view="skillContent = $inview"
              ng-class="{'fadeInRight' : skillContent}"
