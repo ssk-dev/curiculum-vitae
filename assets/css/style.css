@@ -20,6 +20,10 @@
     -moz-transition: all ease-in-out;
 }
 
+a {
+    cursor: pointer;
+}
+
 body {
     font-family: montserrat-light;
 }
@@ -33,12 +37,26 @@ p {
     text-align: center
 }
 
+.btn {
+    border-radius: 0;
+}
+
 .ma-t5p {
     margin-top: 5%;
 }
 
+.ma-b-40 {
+    margin-bottom: 40px !important;
+}
+
 .font-light {
     font-family: montserrat-light;
+}
+
+.ta-c {
+    text-align: center;
+    display: grid;
+    margin: 0 auto;
 }
 
 .ta-r {
@@ -155,6 +173,7 @@ a.active span:before {
 
 img {
     width: 100%;
+    max-width: 400px;
 }
 
 .bg-grey {
@@ -177,16 +196,31 @@ img {
     width: 100%;
     text-align: center;
 }
+
 .menu-responsive {
     display: none;
 }
+
 /** About Me **/
 .aboutme {
-    margin-top: 100px;
+    margin-top: 15%;
 }
 
 .aboutme .headline-spacer {
     margin: 40px 0;
+}
+
+.border-soft {
+    border: 1px solid #ddd;
+}
+
+.button-round {
+    border-radius: 100%;
+    font-size: 30px;
+}
+
+.btn-outline-secondary {
+    background: #fff;
 }
 
 /** Timeline **/
@@ -263,6 +297,25 @@ img {
 }
 
 /**/
+.modal-content {
+    border: none;
+    background: none;
+}
+
+.modal-content img {
+    border: 1px solid rgb(208, 208, 208);
+    box-shadow: 3px 3px 8px 0px #9c9c9c;
+    margin-top: 80px;
+}
+
+.modal-footer {
+    border: none;
+}
+
+.modal-backdrop {
+    background-color: #fff;
+}
+
 .delay {
     -webkit-animation-delay: 0.4s;
     -moz-animation-delay: 0.4s;
@@ -293,6 +346,10 @@ img {
 
 .text-gray-light {
     color: #808080;
+}
+
+footer {
+    margin-bottom: 40px;
 }
 
 @media all and (max-width: 768px) {
@@ -333,14 +390,12 @@ img {
 
     .menu-responsive {
         margin: 5% auto 0;
-        display:block;
+        display: block;
     }
 
     .menu-responsive .inline-toggle {
         text-align: center;
         font-size: 30px;
-        /* z-index: 1; */
-        /* margin:  0 auto; */
         width: 100%;
     }
 
@@ -348,6 +403,7 @@ img {
         margin-top: 40px
     }
 }
+
 @media all and (max-width: 572px) {
     .aboutme table {
         margin: 15px auto;

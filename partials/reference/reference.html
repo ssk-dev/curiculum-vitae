@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row justify-content-center " in-view="reference = $inview" ng-class="reference ? 'fadeInDown zoomIn': ''">
+        <div class="col-xs-6 col-md-4">
+            <h2 class="font-light">FLYERALARM</h2>
+            <div class="headline-spacer"></div>
+            <p class="ta-l">FLYERALARM is one of Europe's leading online printing companies in the B2B sector and one of the largest German e-commerce companies.</p>
+            <a class="button-round ta-c ma-b-40" data-toggle="modal" data-target="#company">
+                <span class="lnr lnr-paperclip"></span>
+            </a>
+            <div class="modal fade" id="company">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img style="max-width: inherit;" src="assets/img/page-1.jpg">
+                            <img style="max-width: inherit;" src="assets/img/page-2.jpg">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary ta-c" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <div id="last-company" class="carousel slide border-soft" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a data-toggle="modal" data-target="#company">
+                            <img src="assets/img/page-1.jpg">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a data-toggle="modal" data-target="#company">
+                            <img src="assets/img/page-2.jpg" alt="Chicago">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
